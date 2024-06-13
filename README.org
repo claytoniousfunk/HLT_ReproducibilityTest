@@ -1,1 +1,28 @@
-# HLT_ReproducibilityTest
+* HLT_ReproducibilityTest
+
+These scripts are used to reproduced the HLT issue reported in [[https://its.cern.ch/jira/browse/CMSHLT-3116][this JIRA ticket]].  Here are descriptions of the three scripts:
+
+** HLT_ReproducibilityTest_OriginalScript.sh
+
+This is the original script written by Marco Musich as reported in the original JIRA.  This script unfortunately does not point to an existing file, and thus I altered it to make the following 2 scripts.
+
+** HLT_ReproducibilityTest_D0Triggers.sh
+
+This now points to a valid input file.  This input file was created in ~CMSSW_14_1_X_2024-03-16-1100~, a development release that is no longer available on ~el8~ machines.
+
+I have tried running this in multiple versions of ~CMSSW~, noteably ~CMSSW_14_1_0_pre4~ and ~CMSSW_14_1_X_2024-06-02-2300~, but I get the same error in both cases.  Here is the error:
+
+#+BEGIN_SRC shell
+----- Begin Fatal Exception 13-Jun-2024 15:37:44 CEST-----------------------                                              
+An exception of category 'Configuration' occurred while                                                                   
+   [0] Constructing the EventProcessor                                                                                    
+   [1] Validating configuration of module: class=L1TGlobalProducer label='hltGtStage2ObjectMap'                           
+Exception Message:                                                                                                        
+Illegal parameter found in configuration.  The parameter is named:                                                        
+ 'AXOL1TLModelVersion'                                                                                                    
+You could be trying to use a parameter name that is not                                                                   
+allowed for this plugin or it could be misspelled.                                                                        
+----- End Fatal Exception -------------------------------------------------
+#+END_SRC
+
+** HLT_ReproducibilityTest_JetTriggers.sh
