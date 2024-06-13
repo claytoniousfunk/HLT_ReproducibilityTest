@@ -12,7 +12,7 @@ This now points to a valid input file.  This input file was created in ~CMSSW_14
 
 I have tried running this in multiple versions of ~CMSSW~, noteably ~CMSSW_14_1_0_pre4~ and ~CMSSW_14_1_X_2024-06-02-2300~, but I get the same error in both cases.  Here is the error:
 
-#+BEGIN_SRC shell
+#+BEGIN_EXAMPLE 
 ----- Begin Fatal Exception 13-Jun-2024 15:37:44 CEST-----------------------                                              
 An exception of category 'Configuration' occurred while                                                                   
    [0] Constructing the EventProcessor                                                                                    
@@ -23,6 +23,6 @@ Illegal parameter found in configuration.  The parameter is named:
 You could be trying to use a parameter name that is not                                                                   
 allowed for this plugin or it could be misspelled.                                                                        
 ----- End Fatal Exception -------------------------------------------------
-#+END_SRC
+#+END_EXAMPLE
 
 ** HLT_ReproducibilityTest_JetTriggers.sh
