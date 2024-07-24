@@ -33,7 +33,7 @@ hltGetCmd+=" --input /store/group/dpg_trigger/comm_trigger/TriggerStudiesGroup/S
 
 configLabel=hlt_"${jobTag}"_onlyHICsAK4PFJet60Eta2p1
 #echo "${configLabel}".py
-${hltGetCmd} --paths HLT_HICsAK4PFJet60Eta2p1_v3 > "${configLabel}".py
+${hltGetCmd} --paths HLT_HIPuAK4CaloJet100Eta5p1_v12 > "${configLabel}".py
 for job_i in {0..9}; do run "${configLabel}".py "${configLabel}"_"${job_i}"; done; unset job_i;
 
 configLabel=hlt_"${jobTag}"_full
