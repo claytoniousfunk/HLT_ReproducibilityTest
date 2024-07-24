@@ -1,7 +1,7 @@
 #!/bin/bash
 
 jobTag=threads4
-hltMenu=/dev/CMSSW_14_0_0/HIon/V60
+hltMenu=/dev/CMSSW_14_1_0/HIon/V8
 
 check_log () {
   grep '0 HLT_HICsAK4PFJet60Eta2p1_v3' $1 | grep TrigReport
