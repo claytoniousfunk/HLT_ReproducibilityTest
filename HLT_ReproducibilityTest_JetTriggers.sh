@@ -26,7 +26,7 @@ EOF
 }
 
 hltGetCmd="hltGetConfiguration ${hltMenu}"
-hltGetCmd+=" --globaltag auto:run3_mc_PRef --mc --unprescale --output minimal --max-events -1"
+hltGetCmd+=" --globaltag 141X_mcRun3_2024_realistic_HI_v2 --mc --unprescale --output minimal --max-events -1"
 hltGetCmd+=" --input /store/group/dpg_trigger/comm_trigger/TriggerStudiesGroup/STORM/debug/170324_reproIssueWithPRef/RelVal_DigiL1Raw_PRef_MC.root"
 
 #echo $hltGetCmd
