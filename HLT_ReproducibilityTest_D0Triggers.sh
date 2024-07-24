@@ -1,7 +1,7 @@
 #!/bin/bash
 
 jobTag=threads4
-hltMenu=/dev/CMSSW_14_0_0/PRef/V72
+hltMenu=/dev/CMSSW_14_1_0/PRef/V8
 
 check_log () {
   grep '0 HLT_PPRefDmesonTrackingGlobal_Dpt60_v' $1 | grep TrigReport
