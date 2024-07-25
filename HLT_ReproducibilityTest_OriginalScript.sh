@@ -1,7 +1,9 @@
+
+
 #!/bin/bash
 
 jobTag=threads4
-hltMenu=/dev/CMSSW_14_0_0/PRef/V72
+hltMenu=/users/musich/tests/dev/CMSSW_14_0_0/CMSHLT-3116/HLT/V6
 
 check_log () {
   grep '0 HLT_PPRefDmesonTrackingGlobal_Dpt60_v' $1 | grep TrigReport
@@ -17,10 +19,7 @@ process.options.numberOfStreams = 0
 
 process.hltOutputMinimal.outputCommands += [
   'keep *_hltFullIter*_*_HLTX',
-  #'keep *_hltSiPixel*_*_HLTX',
-  'keep *_hltSiPixelDigisLegacy_*_*',        
-  'keep *_hltSiPixelClustersLegacy_*_*',
-  'keep *_hltSiPixelRecHitsFromLegacy_*_*'
+  'keep *_hltPuAK4CaloJetsCorrectedIDPassed_*_*', 
 ]
 
 process.hltOutputMinimal.fileName = '${2}.root'
@@ -38,8 +37,9 @@ hltGetCmd+=" --input file:onlyFiring_HLT_PPRefDmesonTrackingGlobal_Dpt60_v3.root
 configLabel=hlt_"${jobTag}"_onlyPPRefDmesonTrackingGlobal
 #echo "${configLabel}".py
 ${hltGetCmd} --paths HLT_PPRefDmesonTrackingGlobal_Dpt60_v3 > "${configLabel}".py
-for job_i in \{0..0}; do run "${configLabel}".py "${configLabel}"_"${job_i}"; done; unset job_i;
+for job_i in {0..10}; do run "${configLabel}".py "${configLabel}"_"${job_i}"; done; unset job_i;
 
 configLabel=hlt_"${jobTag}"_full
 ${hltGetCmd} > "${configLabel}".py
-for job_i in \{0..0}; do run "${configLabel}".py "${configLabel}"_"${job_i}"; done; unset job_i;
+for job_i in {0..10}; do run "${configLabel}".py "${configLabel}"_"${job_i}"; done; unset job_i;
+
